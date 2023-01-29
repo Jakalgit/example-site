@@ -38,7 +38,7 @@ const Catalog = observer(() => {
     const [message, setMessage] = useState('')
     const [style, setStyle] = useState('primary')
 
-    const [lineTags, setLineTags] = useState([])
+    const [lineTags, setLineTags] = useState(user.currentTags)
 
     useEffect(() => {
         initBasket(user.user.id).then(data => {
@@ -87,7 +87,7 @@ const Catalog = observer(() => {
                     colors.forEach(color => {
                         getDownloadURL(ref(getStorage(), BUCKET_URL + color.img1)).then((url) => {
                             const item = data.rows.find(el => el.id === color.itemId)
-                            _items.push({...item, image: url})
+                            _items.push({...item, image: url, color: color})
                             if (_items.length === colors.length) {
                                 _items.sort((prev, next) => next.id < prev.id ? 1 : -1)
                                 setItems(_items)
@@ -192,7 +192,7 @@ const Catalog = observer(() => {
                 <div className="container">
                     <div className={CatalogCss.block_clean + ' row'}>
                         <Fade bottom>
-                            <button onClick={() => setLineTags([])}
+                            <button onClick={() => {setLineTags([]); user.setCurrentTags([])}}
                                     className={CatalogCss.clean_tags}>Очистить теги</button>
                         </Fade>
                     </div>

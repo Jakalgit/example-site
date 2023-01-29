@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from "../css/components/TagsLine.module.css"
 import "../css/components/ModalTransition.css"
 import {CSSTransition} from "react-transition-group";
 import IMG_CLOSE_BLACK from "../img/x_black.webp"
 import {Fade} from "react-reveal";
+import {Context} from "../index";
 
 const TagsLine = ({setTags, scrollTo}) => {
 
+    const {user} = useContext(Context)
     const [start, setStart] = useState(false)
     const [currentModel, setCurrentModel] = useState(null)
 
@@ -17,6 +19,7 @@ const TagsLine = ({setTags, scrollTo}) => {
 
     const setCurrentTags = (tag) => {
         setTags([currentModel.name, tag])
+        user.setCurrentTags([currentModel.name, tag])
         setStart(false)
         scrollTo()
     }

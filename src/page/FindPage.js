@@ -11,7 +11,7 @@ import {Context} from "../index";
 import general from "../css/General.module.css";
 import {Spinner} from "react-bootstrap";
 import Fade from "react-reveal/Fade";
-import {fetchColor, fetchColorByIDs} from "../http/API/colorAPI";
+import {fetchColorByIDs} from "../http/API/colorAPI";
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {BUCKET_URL} from "../utils/consts";
 

@@ -3,11 +3,12 @@ import ItemCss from '../css/components/Item.module.css'
 import {ITEM_ROUTE} from '../utils/consts'
 import {useNavigate} from 'react-router-dom'
 import {Context} from "../index";
-import {createBasketItem} from "../http/API/basketItemAPI";
+import {createBasketItem, getAllBasketItems} from "../http/API/basketItemAPI";
 import Fade from "react-reveal/Fade";
 
 const Item = (props) => {
     const {user} = useContext(Context)
+    const {item} = useContext(Context)
 
     const navigate = useNavigate()
 
@@ -29,6 +30,11 @@ const Item = (props) => {
         if (props.availability) {
             createBasketItem(props.id, user.basket.id, 1, props.color.img1, props.name, props.price, props.color.id,
                 props.article).then(() => {
+                    getAllBasketItems(user.basket.id).then(data => {
+                        if (data !== "Error" && data !== "Ошибка") {
+                            item.setBasketItems(data)
+                        }
+                    })
                     props.updateMessage("Товар добавлен в корзину")
                     props.updateStyle("primary")
                     props.updateStart(true)

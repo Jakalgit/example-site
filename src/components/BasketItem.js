@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import BasketCss from '../css/components/Basket.module.css'
+import style_css from '../css/components/Basket.module.css'
 import {useNavigate} from 'react-router-dom'
 import {
     decrementBasketItem,
@@ -109,45 +109,34 @@ const BasketItem = (props) => {
         })
     }
 
-    const html = (
-        <div className={BasketCss.item + ' col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12'}>
-            <h1 className={BasketCss.item_name + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>{props.name}</h1>
-            <div className={BasketCss.img + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>
-                <LoadImage name={props.image} className={BasketCss.image} onClick={itemClick} />
-            </div>
-            <h2 className={BasketCss.first_price + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>{price + ' ₽'}</h2>
-            <div className={BasketCss.counter + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>
-                <div className={BasketCss.change} onClick={decrement}>
-                    <img src={CHEVRON_LEFT} alt="" className={BasketCss.chevron}/>
+    return (
+        <Fade>
+            <div className={style_css.item +
+                ' col-xxl-12 offset-xxl-0 col-xl-12 offset-xl-0 col-lg-12 offset-lg-0 col-md-12 offset-md-0 col-sm-12 offset-sm-0'}>
+                <LoadImage name={props.image} className={style_css.image} onClick={itemClick} />
+                <div className={style_css.text_block}>
+                    <p className={style_css.article}>{props.article}</p>
+                    <h2 className={style_css.item_name}>{props.name}</h2>
+                    <p className={style_css.first_price}>{price + ' ₽'}</p>
                 </div>
-                <h2 className={BasketCss.count}>{countValue}</h2>
-                <div className={BasketCss.change} onClick={increment}>
-                    <img src={CHEVRON_RIGHT} alt="" className={BasketCss.chevron}/>
+                <div className={style_css.counter}>
+                    <div className={style_css.change} onClick={decrement}>
+                        <img src={CHEVRON_LEFT} alt="" className={style_css.chevron}/>
+                    </div>
+                    <h2 className={style_css.count}>{countValue}</h2>
+                    <div className={style_css.change} onClick={increment}>
+                        <img src={CHEVRON_RIGHT} alt="" className={style_css.chevron}/>
+                    </div>
+                </div>
+                <div className={style_css.full_price_block}>
+                    <p className={style_css.full_price}>{fullPrice + ' ₽'}</p>
+                </div>
+                <div className={style_css.delete_item} onClick={deleteBasketItem}>
+                    <img src={X_WHITE} alt="" className={style_css.delete}/>
                 </div>
             </div>
-            <div className={BasketCss.help_delete + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>
-                <div className={BasketCss.delete_item} onClick={deleteBasketItem}>
-                    <img src={X_WHITE} alt="" className={BasketCss.delete}/>
-                </div>
-            </div>
-            <h2 className={BasketCss.full_price + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>{fullPrice + ' ₽'}</h2>
-            <h2 className={BasketCss.article}>{props.article}</h2>
-        </div>
+        </Fade>
     )
-
-    if (props.anim === 'bottom') {
-        return (
-            <Fade bottom>
-                {html}
-            </Fade>
-        )
-    } else {
-        return (
-            <Fade>
-                {html}
-            </Fade>
-        )
-    }
 };
 
 export default BasketItem;

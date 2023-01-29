@@ -38,6 +38,21 @@ body {
 .svg {
     fill: #ffffff8c;
 }
+.basket_count {
+    margin-bottom: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 1rem;
+    background-color: #0048D0;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-1rem, 1.2rem);
+}
 @media (max-width: 1399px) {
     .navbar_link_user {
         margin-left: 3rem;

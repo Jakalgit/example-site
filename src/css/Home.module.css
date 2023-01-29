@@ -125,13 +125,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
 /* Ссылка на каталог */
 .text_catalog {
     margin-top: 10rem;
     font-family: 'Raleway', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: center;
 }
 .href {
@@ -139,10 +139,26 @@ body {
     color: #0048D0;
 }
 .phone_number {
-    margin-top: 5rem;
+    margin-top: 4rem;
     font-family: 'Montserrat', sans-serif;
-    font-size: 4.5rem;
+    font-size: 4rem;
     text-align: center;
+}
+@media (max-width: 1399px) {
+    .card {
+        width: 24rem;
+        height: 24rem;
+    }
+    .card_image {
+        width: 17rem;
+        height: 17rem;
+    }
+    .card_name {
+        font-size: 1.7rem;
+    }
+    .card_block {
+        margin-top: 4rem;
+    }
 }
 @media (max-width: 1199px) {
     .image {
@@ -155,11 +171,27 @@ body {
     .down_text {
         font-size: 2.5rem;
     }
+    .card {
+        width: 20rem;
+        height: 20rem;
+    }
+    .card_image {
+        width: 14rem;
+        height: 14rem;
+    }
+    .card_name {
+        font-size: 1.5rem;
+    }
+    .card_block {
+        margin-top: 3rem;
+    }
     .text_catalog {
-        font-size: 3.1rem;
+        font-size: 2.5rem;
+        margin-top: 6rem;
     }
     .phone_number {
-        font-size: 4.1rem;
+        margin-top: 2rem;
+        font-size: 3.5rem;
     }
 }
 @media (max-width: 991px) {
@@ -181,6 +213,25 @@ body {
     .check {
         font-size: 4rem;
     }
+    .cards {
+        margin-top: 3rem;
+    }
+    .card {
+        width: 16rem;
+        height: 16rem;
+        box-shadow: 0 0 0.8rem 0.1rem rgba(0, 0, 0, 0.25);
+        border-radius: 1.5rem;
+    }
+    .card_image {
+        width: 10rem;
+        height: 10rem;
+    }
+    .card_name {
+        font-size: 1.3rem;
+    }
+    .card_block {
+        margin-top: 2rem;
+    }
     .head_text {
         font-size: 3.3rem;
     }
@@ -188,10 +239,16 @@ body {
         font-size: 2.1rem;
         margin-top: 8rem;
     }
+    .text_catalog {
+        font-size: 2.1rem;
+    }
+    .phone_number {
+        font-size: 3.1rem;
+    }
 }
 @media (max-width: 767px) {
     .carousel_block {
-        height: 33vh;
+        height: 45vh;
     }
     .welcome_text {
         font-size: 4.5rem;
@@ -219,13 +276,27 @@ body {
         font-size: 1.6rem;
         margin-top: 5rem;
     }
+    .card {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 1.1rem;
+        box-shadow: 0 0 0.6rem 0.1rem rgba(0, 0, 0, 0.25);
+    }
+    .card_image {
+        width: 7rem;
+        height: 7rem;
+    }
+    .card_name {
+        font-size: 1rem;
+    }
+    .card_block {
+        margin-top: 1rem;
+    }
     .text_catalog {
-        font-size: 2.7rem;
-        margin-top: 7rem;
+        font-size: 1.7rem;
     }
     .phone_number {
-        font-size: 3.7rem;
-        margin-top: 2rem;
+        font-size: 2.7rem;
     }
 }
 @media (max-width: 575px) {
@@ -257,16 +328,30 @@ body {
         font-size: 1.3rem;
         margin-top: 4.5rem;
     }
+    .card {
+        width: 20rem;
+        height: 20rem;
+    }
+    .card_image {
+        width: 14rem;
+        height: 14rem;
+    }
+    .card_name {
+        font-size: 1.3rem;
+    }
+    .card_block {
+        margin-top: 2rem;
+    }
     .text_catalog {
-        font-size: 2.2rem;
+        font-size: 1.4rem;
     }
     .phone_number {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 }
 @media (max-width: 430px) {
     .carousel_block {
-        height: 30vh;
+        height: 35vh;
     }
     .welcome_text {
         font-size: 2.7rem;
@@ -274,7 +359,7 @@ body {
     .discount {
         width: 5rem;
         height: 2.5rem;
-        font-size: 2.1rem;
+        font-size: 1.9rem;
     }
     .new {
         font-size: 1.5rem;
@@ -293,19 +378,38 @@ body {
         font-size: 2.3rem;
     }
     .down_text {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-top: 3.5rem;
     }
+    .cards {
+        margin-top: 1rem;
+    }
+    .card {
+        width: 16rem;
+        height: 16rem;
+    }
+    .card_image {
+        width: 10rem;
+        height: 10rem;
+    }
+    .card_name {
+        font-size: 1.2rem;
+    }
+    .card_block {
+        margin-top: 1.5rem;
+    }
     .text_catalog {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
+        margin-top: 4rem;
     }
     .phone_number {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
+        margin-top: 1rem;
     }
 }
 @media (max-width: 360px) {
     .carousel_block {
-        height: 20vh;
+        height: 30vh;
     }
     .welcome_text {
         font-size: 2.3rem;
@@ -313,12 +417,9 @@ body {
     .discount {
         width: 4rem;
         height: 2rem;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     .new {
-        font-size: 1.3rem;
-    }
-    .find_parts {
         font-size: 1.3rem;
     }
     .image {
@@ -334,5 +435,25 @@ body {
     .down_text {
         font-size: 0.9rem;
         margin-top: 3rem;
+    }
+    .card {
+        width: 14rem;
+        height: 14rem;
+    }
+    .card_image {
+        width: 9rem;
+        height: 9rem;
+    }
+    .card_name {
+        font-size: 1.1rem;
+    }
+    .card_block {
+        margin-top: 1.5rem;
+    }
+    .text_catalog {
+        font-size: 1rem;
+    }
+    .phone_number {
+        font-size: 2rem;
     }
 }

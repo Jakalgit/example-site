@@ -6,7 +6,7 @@ import {fetchColor} from "../http/API/colorAPI";
 import {fetchAllInfo, fetchOneItem} from "../http/API/itemAPI"
 import {
     createBasketItem,
-    decrementBasketItem,
+    decrementBasketItem, getAllBasketItems,
     getBasketItem,
     incrementBasketItem
 } from "../http/API/basketItemAPI"
@@ -115,6 +115,11 @@ const ItemPage = () => {
         if (itemPg.availability) {
             createBasketItem(itemPg.id, user.basket.id, count, color.img1, itemPg.name, itemPg.price, color.id,
                 itemPg.article).then(() => {
+                    getAllBasketItems(user.basket.id).then(data => {
+                        if (data !== "Error" && data !== "Ошибка") {
+                            item.setBasketItems(data)
+                        }
+                    })
                     setMessage("Товар добавлен в корзину")
                     setStyle("primary")
                     setStart(true)

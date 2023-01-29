@@ -5,6 +5,7 @@ export default class UserStore {
         this._user = {}
         this._basket = {}
         this._searchValue = ''
+        this._currentTags = []
         makeAutoObservable(this)
     }
 
@@ -20,6 +21,10 @@ export default class UserStore {
         this._searchValue = searchValue
     }
 
+    setCurrentTags(tags) {
+        this._currentTags = tags
+    }
+
     get user() {
         return this._user
     }
@@ -30,5 +35,9 @@ export default class UserStore {
 
     get searchValue() {
         return this._searchValue
+    }
+
+    get currentTags() {
+        return this._currentTags
     }
 }
