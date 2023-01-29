@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from "../components/Footer";
 import {Link, useNavigate} from "react-router-dom";
 import {CATALOG_ROUTE, DISCOUNT_ROUTE, NEW_ROUTE, POPULAR_ROUTE, REPAIR_ROUTE} from "../utils/consts";
-import HomeCss from "../css/Home.module.css"
+import style_css from "../css/Home.module.css"
 import general from "../css/General.module.css"
 import {Carousel} from "react-bootstrap";
 import Fade from "react-reveal/Fade";
@@ -22,57 +22,57 @@ const Home = () => {
             <Fade>
                 <Carousel variant={'dark'}>
                     <Carousel.Item>
-                        <div className={HomeCss.carousel_block}>
-                            <h1 className={HomeCss.welcome_text}>
+                        <div className={style_css.carousel_block}>
+                            <h1 className={style_css.welcome_text}>
                                 Добро пожаловать!
                             </h1>
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div onClick={() => navigate(DISCOUNT_ROUTE)}
-                             className={HomeCss.carousel_block + ' ' + HomeCss.hover}>
-                            <h1 className={HomeCss.welcome_text}>
+                             className={style_css.carousel_block + ' ' + style_css.hover}>
+                            <h1 className={style_css.welcome_text}>
                                 Акции
                             </h1>
-                            <h1 className={HomeCss.discount}>%</h1>
+                            <h1 className={style_css.discount}>%</h1>
                         </div>
                         <Carousel.Caption>
-                            <p className={HomeCss.prompt}>Нажмите чтобы посмотреть</p>
+                            <p className={style_css.prompt}>Нажмите чтобы посмотреть</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div onClick={() => navigate(NEW_ROUTE)}
-                             className={HomeCss.carousel_block + ' ' + HomeCss.hover}>
-                            <h1 className={HomeCss.welcome_text}>
+                             className={style_css.carousel_block + ' ' + style_css.hover}>
+                            <h1 className={style_css.welcome_text}>
                                 Новинки
                             </h1>
-                            <h1 style={{backgroundColor: "#00E5FF"}} className={HomeCss.discount + ' ' + HomeCss.new}>new</h1>
+                            <h1 style={{backgroundColor: "#00E5FF"}} className={style_css.discount + ' ' + style_css.new}>new</h1>
                         </div>
                         <Carousel.Caption>
-                            <p className={HomeCss.prompt}>Нажмите чтобы посмотреть</p>
+                            <p className={style_css.prompt}>Нажмите чтобы посмотреть</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div onClick={() => navigate(POPULAR_ROUTE)}
-                             className={HomeCss.carousel_block + ' ' + HomeCss.hover}>
-                            <h1 className={HomeCss.welcome_text}>
+                             className={style_css.carousel_block + ' ' + style_css.hover}>
+                            <h1 className={style_css.welcome_text}>
                                 Популярное
                             </h1>
-                            <h1 style={{backgroundColor: "#FDD835"}} className={HomeCss.discount}>★</h1>
+                            <h1 style={{backgroundColor: "#FDD835"}} className={style_css.discount}>★</h1>
                         </div>
                         <Carousel.Caption>
-                            <p className={HomeCss.prompt}>Нажмите чтобы посмотреть</p>
+                            <p className={style_css.prompt}>Нажмите чтобы посмотреть</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <div onClick={() => navigate(REPAIR_ROUTE)} className={HomeCss.carousel_block + ' ' + HomeCss.hover}>
-                            <h1 className={HomeCss.welcome_text}>
+                        <div onClick={() => navigate(REPAIR_ROUTE)} className={style_css.carousel_block + ' ' + style_css.hover}>
+                            <h1 className={style_css.welcome_text}>
                                 Ремонт
                             </h1>
-                            <h1 style={{backgroundColor: "#000"}} className={HomeCss.discount}>🛠</h1>
+                            <h1 style={{backgroundColor: "#000"}} className={style_css.discount}>🛠</h1>
                         </div>
                         <Carousel.Caption>
-                            <p className={HomeCss.prompt}>Нажмите чтобы посмотреть</p>
+                            <p className={style_css.prompt}>Нажмите чтобы посмотреть</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
@@ -80,12 +80,62 @@ const Home = () => {
 
             <div className="container">
                 <div className="row">
+                    <div className="cards">
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/model.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Модели</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/accu.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Аккумуляторы</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/charge.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Зарядные устройства</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/warp.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Электроника</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/wheel.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Колёса</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/parts.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Запчасти</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/tuning.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Тюнинг</h2>
+                            </div>
+                        </div>
+                        <div className={style_css.card_block + ' col-xxl-3'}>
+                            <div className={style_css.card}>
+                                <img src={require("../img/home/acs.webp")} alt="" className={style_css.card_image}/>
+                                <h2 className={style_css.card_name}>Аксессуары</h2>
+                            </div>
+                        </div>
+                    </div>
                     <Fade left>
-                        <h2 className={HomeCss.text_catalog + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>Весь
-                            ассортимент товаров вы можете посмотреть в <Link to={CATALOG_ROUTE}><p className={HomeCss.href}>каталоге</p></Link></h2>
+                        <h2 className={style_css.text_catalog + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>Весь
+                            ассортимент товаров вы можете посмотреть в <Link to={CATALOG_ROUTE}><p className={style_css.href}>каталоге</p></Link></h2>
                     </Fade>
                     <Fade right>
-                        <h2 className={HomeCss.phone_number + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>+7(916)-639-88-04</h2>
+                        <h2 className={style_css.phone_number + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>+7(916)-639-88-04</h2>
                     </Fade>
                 </div>
             </div>

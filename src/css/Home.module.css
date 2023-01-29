@@ -97,6 +97,36 @@ body {
     color: #fff;
     border-style: none;
 }
+/* Карточки с готовыми тегами */
+.card {
+    width: 27rem;
+    height: 27rem;
+    box-shadow: 0 0 1.5rem 0.1rem rgba(0, 0, 0, 0.25);
+    border-radius: 1.8rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.card_image {
+    width: 20rem;
+    height: 20rem;
+}
+.card_name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+}
+.card_block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
 /* Ссылка на каталог */
 .text_catalog {
     margin-top: 10rem;
