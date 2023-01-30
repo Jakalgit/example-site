@@ -94,7 +94,7 @@ const BasketItem = (props) => {
 
     const increment = () => {
         if (countValue < 99) {
-            incrementBasketItem(props.itemId, props.basketId, countValue).then(() => {
+            incrementBasketItem(props.itemId, props.basketId, countValue + 1).then(() => {
                 setCountValue(prevState => prevState + 1)
                 let prMas = item.basketItems.map(item => {
                     if (item.id === props.id) {
@@ -111,7 +111,7 @@ const BasketItem = (props) => {
 
     const decrement = () => {
         if (countValue > 1) {
-            decrementBasketItem(props.itemId, props.basketId, countValue).then(() => {
+            decrementBasketItem(props.itemId, props.basketId, countValue - 1).then(() => {
                 setCountValue(prevState => prevState - 1)
                 let prMas = item.basketItems.map(item => {
                     if (item.id === props.id) {

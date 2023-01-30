@@ -8,7 +8,7 @@ import {
     createBasketItem,
     decrementBasketItem, getAllBasketItems,
     getBasketItem,
-    incrementBasketItem
+    incrementBasketItem, setCountBasketItem
 } from "../http/API/basketItemAPI"
 import {Context} from "../index";
 import {Carousel, Spinner} from "react-bootstrap";
@@ -91,12 +91,39 @@ const ItemPage = () => {
         }
     }, [start])
 
-
+    useEffect(() => {
+        if (count < 1) {
+            setCountBasketItem(props.itemId, props.basketId, 1).then(() => {
+                setCount(1)
+                let prMas = item.basketItems.map(item => {
+                    if (item.id === props.id) {
+                        item.count = 1
+                    }
+                    return item
+                })
+                item.setBasketItems(prMas)
+                props.setItems(prMas)
+            })
+        }
+        if (count > 99) {
+            setCountBasketItem(props.itemId, props.basketId, 99).then(() => {
+                setCount(1)
+                let prMas = item.basketItems.map(item => {
+                    if (item.id === props.id) {
+                        item.count = 99
+                    }
+                    return item
+                })
+                item.setBasketItems(prMas)
+                props.setItems(prMas)
+            })
+        }
+    }, [count])
 
     const increment = () => {
         let _count = count
         if (count < 99) {
-            incrementBasketItem(id, user.basket.id, _count).then(() => {
+            incrementBasketItem(id, user.basket.id, _count + 1).then(() => {
                 setCount(prevState => prevState + 1)
                 item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count + 1} : el))
             })
@@ -106,7 +133,7 @@ const ItemPage = () => {
     const decrement = () => {
         let _count = count
         if (count > 1) {
-            decrementBasketItem(id, user.basket.id, _count).then(() => {
+            decrementBasketItem(id, user.basket.id, _count - 1).then(() => {
                 setCount(prevState => prevState - 1)
                 item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count - 1} : el))
             })
