@@ -57,10 +57,10 @@ const DeliveryAndPay = () => {
                                 <div style={{position:"relative",overflow:"hidden"}}><a
                                     href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
                                     style={{color:"#eee",fontStyle:"12px",position:"absolute",top:"0px"}}>Москва</a><a
-                                    href="https://yandex.ru/maps/213/moscow/?ll=37.626913%2C55.754276&mode=whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=37.620508%2C55.755007&whatshere%5Bzoom%5D=15.35&z=15.35"
+                                    href="https://yandex.ru/maps/213/moscow/?ll=37.626566%2C55.752457&mode=whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=37.622380%2C55.753918&whatshere%5Bzoom%5D=15.32&z=15.32"
                                     style={{color:"#eee",fontStyle:"12px",position:"absolute",top:"14px"}}>Спартаковская площадь,
                                     10с12 — Яндекс Карты</a>
-                                    <iframe className={DeliveryAndPayCss.iframe} title="yandex-maps" src="https://yandex.ru/map-widget/v1/-/CCUJR8uKdC"
+                                    <iframe className={DeliveryAndPayCss.iframe} title="yandex-maps" src="https://yandex.ru/map-widget/v1/?ll=37.626566%2C55.752457&mode=whatshere&whatshere%5Bpoint%5D=37.622380%2C55.753918&whatshere%5Bzoom%5D=15.32&z=15.32"
                                             width="560" height="400" frameBorder="1" allowFullScreen="true"
                                             style={{position:"relative",height:"400px"}}></iframe>
                                 </div>
