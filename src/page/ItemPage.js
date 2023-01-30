@@ -94,7 +94,7 @@ const ItemPage = () => {
     const increment = () => {
         let _count = count
         if (count < 99) {
-            incrementBasketItem(id, user.basket.id).then(() => {
+            incrementBasketItem(id, user.basket.id, _count).then(() => {
                 setCount(prevState => prevState + 1)
                 item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count + 1} : el))
             })
@@ -104,7 +104,7 @@ const ItemPage = () => {
     const decrement = () => {
         let _count = count
         if (count > 1) {
-            decrementBasketItem(id, user.basket.id).then(() => {
+            decrementBasketItem(id, user.basket.id, _count).then(() => {
                 setCount(prevState => prevState - 1)
                 item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count - 1} : el))
             })
