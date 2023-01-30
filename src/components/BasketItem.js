@@ -5,7 +5,7 @@ import {
     decrementBasketItem,
     deleteOneBasketItem,
     getAllBasketItems,
-    incrementBasketItem
+    incrementBasketItem, setCountBasketItem
 } from "../http/API/basketItemAPI";
 import {ITEM_ROUTE} from "../utils/consts";
 import {Context} from "../index";
@@ -74,7 +74,7 @@ const BasketItem = (props) => {
             })
             item.setBasketItems(prMas)
             props.setItems(prMas)
-            incrementBasketItem(props.itemId, props.basketId).then()
+            setCountBasketItem(props.itemId, props.basketId, countValue).then()
             setFull()
         }
     }
@@ -90,7 +90,7 @@ const BasketItem = (props) => {
             })
             item.setBasketItems(prMas)
             props.setItems(prMas)
-            decrementBasketItem(props.itemId, props.basketId).then()
+            setCountBasketItem(props.itemId, props.basketId, countValue).then()
             setFull()
         }
     }
