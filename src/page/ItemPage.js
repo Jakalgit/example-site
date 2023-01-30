@@ -93,7 +93,7 @@ const ItemPage = () => {
 
     useEffect(() => {
         if (count < 1) {
-            setCountBasketItem(props.itemId, props.basketId, 1).then(() => {
+            setCountBasketItem(id, user.basket.id, 1).then(() => {
                 setCount(1)
                 let prMas = item.basketItems.map(item => {
                     if (item.id === props.id) {
@@ -106,7 +106,7 @@ const ItemPage = () => {
             })
         }
         if (count > 99) {
-            setCountBasketItem(props.itemId, props.basketId, 99).then(() => {
+            setCountBasketItem(id, user.basket.id, 99).then(() => {
                 setCount(1)
                 let prMas = item.basketItems.map(item => {
                     if (item.id === props.id) {
