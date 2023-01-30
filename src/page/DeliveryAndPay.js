@@ -31,8 +31,8 @@ const DeliveryAndPay = () => {
                                     <h2 className={DeliveryAndPayCss.info}>Доставка СДЭК в выбранный пункт выдачи, стоимость
                                         доставки<br/> зависит от веса товара и удалённости региона.</h2>
                                     <h2 className={DeliveryAndPayCss.header_info}>Самовывоз:</h2>
-                                    <h2 className={DeliveryAndPayCss.info}>Метро Бауманская<br/>г. Москва, Спартаковская площадь д. 10, стр.
-                                        12.<br/><p className={DeliveryAndPayCss.index}>Индекс: 105082.</p></h2>
+                                    <h2 className={DeliveryAndPayCss.info}>Метро Бауманская<br/>г. Москва, Улица Пушкина д. Колотушкина, стр.
+                                        12.<br/><p className={DeliveryAndPayCss.index}>Индекс: 000000.</p></h2>
                                 </div>
                                 <div className='right-block col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12'>
                                     <h2 className={DeliveryAndPayCss.header_text}>Оплата</h2>
@@ -44,7 +44,7 @@ const DeliveryAndPay = () => {
                                     <h2 className={DeliveryAndPayCss.info}>Карты VISA, MasterCard, банковские переводы.</h2>
                                     <h2 className={DeliveryAndPayCss.header_info}>Электронные кошельки:</h2>
                                     <h2 className={DeliveryAndPayCss.info}>ЮMoney и др.</h2>
-                                    <h2 className={DeliveryAndPayCss.phone_number}>+7(916)-639-88-04</h2>
+                                    <h2 className={DeliveryAndPayCss.phone_number}>+7(XXX)-XXX-XX-XX</h2>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ const DeliveryAndPay = () => {
                                 <div style={{position:"relative",overflow:"hidden"}}><a
                                     href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
                                     style={{color:"#eee",fontStyle:"12px",position:"absolute",top:"0px"}}>Москва</a><a
-                                    href="https://yandex.ru/maps/213/moscow/house/spartakovskaya_ploshchad_10s12/Z04YcABnT0MGQFtvfXt2dn9nZw==/?azimuth=0.038860846626437774&ll=37.678584%2C55.777553&utm_medium=mapframe&utm_source=maps&z=18.38"
+                                    href="https://yandex.ru/maps/213/moscow/?ll=37.626913%2C55.754276&mode=whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=37.620508%2C55.755007&whatshere%5Bzoom%5D=15.35&z=15.35"
                                     style={{color:"#eee",fontStyle:"12px",position:"absolute",top:"14px"}}>Спартаковская площадь,
                                     10с12 — Яндекс Карты</a>
                                     <iframe className={DeliveryAndPayCss.iframe} title="yandex-maps" src="https://yandex.ru/map-widget/v1/-/CCUJR8uKdC"
