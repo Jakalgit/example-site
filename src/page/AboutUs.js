@@ -72,14 +72,14 @@ const AboutUs = () => {
                                <h2 className={style_css.data_text}>+7(XXX)-XXX-XX-XX</h2>
                            </div>
                            <div className={style_css.chats}>
-                               <a href="https://t.me/Pash_Rc" target="_blank" className={style_css.tg + ' ' + style_css.back}>
+                               <a href="https://t.me/lipoyomi" target="_blank" className={style_css.tg + ' ' + style_css.back}>
                                    <img
                                        className={style_css.telegram}
                                        src={require("../img/telegram.webp")}
                                        alt=""
                                    />
                                </a>
-                               <a href="https://wa.me/79166398804" target="_blank" style={{display: 'inline-block'}}>
+                               <a href="" target="_blank" style={{display: 'inline-block'}}>
                                    <img
                                        className={style_css.back}
                                        src={require("../img/whatsapp_logo.webp")}
