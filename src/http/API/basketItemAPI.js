@@ -17,6 +17,11 @@ export const decrementBasketItem = async (itemId, basketId, count) => {
     return data
 }
 
+export const setCountBasketItem = async (itemId, basketId, count) => {
+    const {data} = await $host.post('api/basketitem/set-count/', {itemId, basketId, count})
+    return data
+}
+
 export const deleteOneBasketItem = async (id) => {
     const {data} = await $host.post('api/basketitem/deleteone/', {id})
     return data

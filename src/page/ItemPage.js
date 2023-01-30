@@ -91,6 +91,8 @@ const ItemPage = () => {
         }
     }, [start])
 
+
+
     const increment = () => {
         let _count = count
         if (count < 99) {

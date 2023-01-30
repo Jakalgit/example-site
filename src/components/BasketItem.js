@@ -5,7 +5,7 @@ import {
     decrementBasketItem,
     deleteOneBasketItem,
     getAllBasketItems,
-    incrementBasketItem
+    incrementBasketItem, setCountBasketItem
 } from "../http/API/basketItemAPI";
 import {ITEM_ROUTE} from "../utils/consts";
 import {Context} from "../index";
@@ -58,6 +58,35 @@ const BasketItem = (props) => {
     useEffect(() => {
         setFull()
     }, [price, countValue])
+
+    useEffect(() => {
+        if (countValue < 1) {
+            setCountBasketItem(props.itemId, props.basketId, 1).then(() => {
+                setCountValue(1)
+                let prMas = item.basketItems.map(item => {
+                    if (item.id === props.id) {
+                        item.count = 1
+                    }
+                    return item
+                })
+                item.setBasketItems(prMas)
+                props.setItems(prMas)
+            })
+        }
+        if (countValue > 99) {
+            setCountBasketItem(props.itemId, props.basketId, 99).then(() => {
+                setCountValue(1)
+                let prMas = item.basketItems.map(item => {
+                    if (item.id === props.id) {
+                        item.count = 99
+                    }
+                    return item
+                })
+                item.setBasketItems(prMas)
+                props.setItems(prMas)
+            })
+        }
+    }, [countValue])
 
     const itemClick = () => {
         navigate(ITEM_ROUTE + '/' + props.itemId)
