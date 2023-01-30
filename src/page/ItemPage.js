@@ -96,7 +96,7 @@ const ItemPage = () => {
             setCountBasketItem(id, user.basket.id, 1).then(() => {
                 setCount(1)
                 let prMas = item.basketItems.map(item => {
-                    if (item.id === props.id) {
+                    if (item.id === id) {
                         item.count = 1
                     }
                     return item
@@ -109,7 +109,7 @@ const ItemPage = () => {
             setCountBasketItem(id, user.basket.id, 99).then(() => {
                 setCount(1)
                 let prMas = item.basketItems.map(item => {
-                    if (item.id === props.id) {
+                    if (item.id === id) {
                         item.count = 99
                     }
                     return item
