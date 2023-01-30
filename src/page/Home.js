@@ -145,7 +145,7 @@ const Home = () => {
                             ассортимент товаров вы можете посмотреть в <Link to={CATALOG_ROUTE}><p className={style_css.href}>каталоге</p></Link></h2>
                     </Fade>
                     <Fade right>
-                        <h2 className={style_css.phone_number + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>+7(916)-639-88-04</h2>
+                        <h2 className={style_css.phone_number + ' col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'}>+7(XXX)-XXX-XX-XX</h2>
                     </Fade>
                 </div>
             </div>
