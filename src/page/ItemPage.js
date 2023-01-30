@@ -6,8 +6,9 @@ import {fetchColor} from "../http/API/colorAPI";
 import {fetchAllInfo, fetchOneItem} from "../http/API/itemAPI"
 import {
     createBasketItem,
-    getAllBasketItems,
-    getBasketItem, setCountBasketItem,
+    decrementBasketItem, getAllBasketItems,
+    getBasketItem,
+    incrementBasketItem
 } from "../http/API/basketItemAPI"
 import {Context} from "../index";
 import {Carousel, Spinner} from "react-bootstrap";
@@ -93,18 +94,20 @@ const ItemPage = () => {
     const increment = () => {
         let _count = count
         if (count < 99) {
-            setCount(prevState => prevState + 1)
-            item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count + 1} : el))
-            setCountBasketItem(id, user.basket.id, _count + 1).then()
+            incrementBasketItem(id, user.basket.id).then(() => {
+                setCount(prevState => prevState + 1)
+                item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count + 1} : el))
+            })
         }
     }
 
     const decrement = () => {
         let _count = count
         if (count > 1) {
-            setCount(prevState => prevState - 1)
-            item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count - 1} : el))
-            setCountBasketItem(id, user.basket.id, _count - 1).then()
+            decrementBasketItem(id, user.basket.id).then(() => {
+                setCount(prevState => prevState - 1)
+                item.setBasketItems(item.basketItems.map(el => el.id === id ? {...el, count: _count - 1} : el))
+            })
         }
     }
 

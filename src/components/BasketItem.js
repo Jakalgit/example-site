@@ -2,9 +2,10 @@ import React, {useContext, useEffect, useState} from 'react';
 import style_css from '../css/components/Basket.module.css'
 import {useNavigate} from 'react-router-dom'
 import {
+    decrementBasketItem,
     deleteOneBasketItem,
     getAllBasketItems,
-    setCountBasketItem
+    incrementBasketItem
 } from "../http/API/basketItemAPI";
 import {ITEM_ROUTE} from "../utils/consts";
 import {Context} from "../index";
@@ -64,32 +65,34 @@ const BasketItem = (props) => {
 
     const increment = () => {
         if (countValue < 99) {
-            setCountValue(prevState => prevState + 1)
-            let prMas = item.basketItems.map(item => {
-                if (item.id === props.id) {
-                    item.count++
-                }
-                return item
+            incrementBasketItem(props.itemId, props.basketId, countValue).then(() => {
+                setCountValue(prevState => prevState + 1)
+                let prMas = item.basketItems.map(item => {
+                    if (item.id === props.id) {
+                        item.count++
+                    }
+                    return item
+                })
+                item.setBasketItems(prMas)
+                props.setItems(prMas)
             })
-            item.setBasketItems(prMas)
-            props.setItems(prMas)
-            setCountBasketItem(props.itemId, props.basketId, countValue).then()
             setFull()
         }
     }
 
     const decrement = () => {
         if (countValue > 1) {
-            setCountValue(prevState => prevState - 1)
-            let prMas = item.basketItems.map(item => {
-                if (item.id === props.id) {
-                    item.count--
-                }
-                return item
+            decrementBasketItem(props.itemId, props.basketId, countValue).then(() => {
+                setCountValue(prevState => prevState - 1)
+                let prMas = item.basketItems.map(item => {
+                    if (item.id === props.id) {
+                        item.count--
+                    }
+                    return item
+                })
+                item.setBasketItems(prMas)
+                props.setItems(prMas)
             })
-            item.setBasketItems(prMas)
-            props.setItems(prMas)
-            setCountBasketItem(props.itemId, props.basketId, countValue).then()
             setFull()
         }
     }

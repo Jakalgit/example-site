@@ -7,8 +7,13 @@ export const createBasketItem = async (itemId, basketId, count, image, name, pri
     return data
 }
 
-export const setCountBasketItem = async (itemId, basketId, count) => {
-    const {data} = await $host.post('api/basketitem/set-count/', {itemId, basketId, count})
+export const incrementBasketItem = async (itemId, basketId, count) => {
+    const {data} = await $host.post('api/basketitem/increment/', {itemId, basketId, count})
+    return data
+}
+
+export const decrementBasketItem = async (itemId, basketId, count) => {
+    const {data} = await $host.post('api/basketitem/decrement/', {itemId, basketId, count})
     return data
 }
 
