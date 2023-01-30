@@ -2,10 +2,9 @@ import React, {useContext, useEffect, useState} from 'react';
 import style_css from '../css/components/Basket.module.css'
 import {useNavigate} from 'react-router-dom'
 import {
-    decrementBasketItem,
     deleteOneBasketItem,
     getAllBasketItems,
-    incrementBasketItem, setCountBasketItem
+    setCountBasketItem
 } from "../http/API/basketItemAPI";
 import {ITEM_ROUTE} from "../utils/consts";
 import {Context} from "../index";
