@@ -102,7 +102,6 @@ const ItemPage = () => {
                     return item
                 })
                 item.setBasketItems(prMas)
-                props.setItems(prMas)
             })
         }
         if (count > 99) {
@@ -115,7 +114,6 @@ const ItemPage = () => {
                     return item
                 })
                 item.setBasketItems(prMas)
-                props.setItems(prMas)
             })
         }
     }, [count])
