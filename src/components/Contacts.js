@@ -18,7 +18,7 @@ const Contacts = () => {
             <div>
                 {!showMessage ?
                     <div className={style_css.contacts}>
-                        <a href="https://t.me/Pash_Rc" target="_blank" className={style_css.telegram + ' ' + style_css.circle}>
+                        <a href="https://t.me/lipoyomi" target="_blank" className={style_css.telegram + ' ' + style_css.circle}>
                             <img src={TELEGRAM} alt="" className={style_css.tg + ' ' + style_css.image}/>
                         </a>
                         <div className={style_css.chats + ' ' + style_css.circle} onClick={(e) => {setShowMessage(true); e.stopPropagation()}}>
