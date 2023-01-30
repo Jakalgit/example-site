@@ -59,7 +59,7 @@ const AboutUs = () => {
                        <div className={style_css.part + " col-xxl-6 offset-xxl-0 col-xl-6 offset-xl-0 " +
                            "col-lg-6 offset-lg-0 col-md-6 offset-md-0 col-sm-6 offset-sm-0 col-10 offset-1"}>
                            <div style={{position:"relative",overflow:"hidden"}}>
-                               <iframe className={style_css.iframe} title="yandex-maps" src="https://yandex.ru/map-widget/v1/-/CCUJR8uKdC"
+                               <iframe className={style_css.iframe} title="yandex-maps" src="https://yandex.ru/map-widget/v1/?ll=37.626566%2C55.752457&mode=whatshere&whatshere%5Bpoint%5D=37.622380%2C55.753918&whatshere%5Bzoom%5D=15.32&z=15.32"
                                        width="560" height="400" frameBorder="1" allowFullScreen="true"></iframe>
                            </div>
                            <h1 className={style_css.address_text}>м. Бауманская, Спартаковская площадь д. 10 c12</h1>
@@ -68,8 +68,8 @@ const AboutUs = () => {
                            "col-lg-6 offset-lg-0 col-md-6 offset-md-0 col-sm-6 offset-sm-0 col-10 offset-1"}>
                            <h1 style={{marginTop: '0.5rem'}} className={style_css.head_text}>Контакты</h1>
                            <div className={style_css.data_block}>
-                               <h2 className={style_css.data_text}>workrcshop@gmail.com</h2>
-                               <h2 className={style_css.data_text}>+7(916)-639-88-04</h2>
+                               <h2 className={style_css.data_text}>examplemail@gmail.com</h2>
+                               <h2 className={style_css.data_text}>+7(XXX)-XXX-XX-XX</h2>
                            </div>
                            <div className={style_css.chats}>
                                <a href="https://t.me/Pash_Rc" target="_blank" className={style_css.tg + ' ' + style_css.back}>
